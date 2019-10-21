@@ -1,0 +1,108 @@
+{% extends "base.html" %} {% block content%}
+<div class="jumbotron">
+        <div class="container">
+          <span class="text-black">
+            <h1 class="display-3 text-center">Sparkify Prediction Project</h1>
+          </span>
+          <h1 class="display-5 text-center">Prediction Page</h1>
+          </div>
+        </div>
+      </div>
+<h4 class="text-center">Input User Data</h4>
+
+<div class="container">
+<form action="" method="post" role="form">
+  <!-- row1 -->
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-4">
+      {{ form.csrf}}
+      <div> {{form.gender.label}}: {{form.gender(class="form-control")}} </div>
+  </div>
+  <div class="col-md-4">
+      {{ form.csrf}}
+      <div> {{form.location.label}}: {{form.location(class="form-control")}} </div>
+  </div>
+  <div class="col-md-4">
+      {{ form.csrf}}
+      <div> {{form.level.label}}: {{form.level(class="form-control")}} </div>
+  </div>
+</div>
+
+<!-- row2  -->
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.active_day.label}}: {{form.active_day(class="form-control")}} </div>
+  </div>
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.avg_sessionId.label}}: {{form.avg_sessionId(class="form-control")}} </div>
+    </div>
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.avg_itemInSession.label}}: {{form.avg_itemInSession(class="form-control")}} </div>
+  </div>
+</div>
+
+<!-- row3 -->
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.avg_thumbsup.label}}: {{form.avg_thumbsup(class="form-control")}} </div>
+  </div>
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.avg_thumbsdown.label}}: {{form.avg_thumbsdown(class="form-control")}} </div>
+  </div>
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.avg_advert.label}}: {{form.avg_advert(class="form-control")}} </div>
+  </div>
+</div>
+
+<!-- row4 -->
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.avg_addfriend.label}}: {{form.avg_addfriend(class="form-control")}} </div>
+  </div>
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.avg_addplaylist.label}}: {{form.avg_addplaylist(class="form-control")}} </div>
+  </div>
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.avg_error.label}}: {{form.avg_error(class="form-control")}} </div>
+  </div>
+</div>
+
+<!-- row5 -->
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.avg_logout.label}}: {{form.avg_logout(class="form-control")}} </div>
+  </div>
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.avg_alltime_Top100_artist.label}}: {{form.avg_alltime_Top100_artist(class="form-control")}} </div>
+  </div>
+  <div class="col-md-4">
+        {{ form.csrf}}
+        <div> {{form.avg_thisweek_Top100_song.label}}: {{form.avg_thisweek_Top100_song(class="form-control")}} </div>
+  </div>
+</div>
+<!-- Submit button -->
+
+<div> {{form.submit.label}}: {{form.submit(class="btn btn-primary btn-lg btn-block")}} </div>
+</form>
+
+
+</div>
+
+</div>
+
+
+{% endblock %}
+
+
+

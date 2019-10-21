@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content%}
+<div class="jumbotron">
+  <div class="container">
+    <span class="text-black">
+      <h1 class="display-3 text-center">Sparkify Prediction Project</h1>
+    </span>
+    <h1 class="display-5 text-center">Prediction Result</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card bg-secondary text-white my-2">
+    <div class="card-header">Will this user churn:? {{ decision }}</div>
+    <div class="card-body">
+      <h4 class="card-title">Probability to churn: {{ churn_probability }}</h4>
+      <p class="card-text">
+        {{ wordForSparkify }}
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
