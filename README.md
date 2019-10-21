@@ -4,15 +4,8 @@
 
 ## Table of Contents
 1. [Project Definition](#project_definition)
-    1. [Project Overview](#project_overview)
-    2. [Problem Statement](#problem_statement)
-    3. [Metrics](#metrics)
 2. [Anlysis](#analysis)
-    1. [Data Exploration](#data_exploration)
-    2. [Data Visualization](#data_visualization)
 3. [Conclusion](#conclusion)
-    1. [Reflection](#reflection)
-    2. [Improvement](#improvement)
 4. [How to use](#how_to_use)    
     1. [Dependency](#dependency)
     2. [Installation](#installation)
@@ -27,20 +20,27 @@
 
 <a name="project_definition"></a>
 ## Project Definition
-
-<a name="project_overview"></a>
-## Project Overview
+### Project Overview
 This is the capstone project of 2nd term of Data Science Nanodegree Program by Udacity. The goal of the project is to create a prediction model to find Sparkify users who are going to churn. Sparkify is a virtual music streaming service like Spotify. The major components of the project consists of three parts.
 
 1. ETL Pipeline : Original log file of Sparkify given by Udacity is loaded in a dataframe of Apache Spark dataframe and preprocessed(extraction, transformation, and loading) to make a refined dataframe for a machine learning pipeline.
 2. ML pipeline : Prediction model is built and trained with the dataframe from ETL pipeline to predict potential churn users.
 3. Flask Web App : A web app contains the visual summary of a dataset used training a model and a prediction page that an user of this web can input a basic data of a Sparkify user and get a prediction result.
 
+### Problem Statement
 
-<a name="problem_statement"></a>
-## Problem Statement
-<a name="metrics"></a>
-## Metrics
+### Metrics
+
+<a name="analysis"></a>
+## Analysis
+### Data Exploration
+#### Input Data
+### Data Visualization
+
+<a name="Conclusion"></a>
+## Conclusion
+### Reflection
+### Improvement
 
 
 
