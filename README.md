@@ -1,5 +1,5 @@
 # Udacity Data Scientist Nanodegree program
-## Disaster response pipelines
+## Capstone Project_Prediction Model for Sparkify
 
 ## Table of Contents
 1. [About the Project](#about_the_project)
@@ -15,34 +15,39 @@
 6. [Acknowledgements](#acknowledgements)
 
 <a name="about_the_project"></a>
+
 ## About the Project
+This is the capstone project of 2nd term of Data Science Nanodegree Program by Udacity. The goal of the project is to create a prediction model to find Sparkify users who are going to churn. Sparkify is a virtual music streaming service like Spotify. The major components of the project consists of three parts.
 
-This is one of 2nd term projects of Data Science Nanodegree Program by Udacity. The goal of the project is to create a model using a data set containing real messages given by [Figure Eight](https://www.figure-eight.com) to classify disaster messages. To complete this, three process were used in order as follows.
-
-1. ETL Pipeline : Original messages are preprocessed(extraction, transformation, and loading) to be fed for a machine learning pipeline.
-2. ML pipeline : a model is built and trained with data from ETL pipeline to calssify text messages.
-3. Flask Web App : A web app contains the visual summary of a dataset used training a model and a section that a user can input a message to get the result of classification.
+1. ETL Pipeline : Original log file of Sparkify given by Udacity is loaded in a dataframe of Apache Spark dataframe and preprocessed(extraction, transformation, and loading) to make a refined dataframe for a machine learning pipeline.
+2. ML pipeline : Prediction model is built and trained with the dataframe from ETL pipeline to predict potential churn users.
+3. Flask Web App : A web app contains the visual summary of a dataset used training a model and a prediction page that an user of this web can input a basic data of a Sparkify user and get a prediction result.
 
 <a name="how_to_use"></a>
 ## How to Use
+
 <a name="dependency"></a>
 ### Dependency
 The code should run with no issues using Python versions 3.* with the libararies as follows.
-- Numpy, Pandas, Sqlite3, SQLalchemy, Scikit-Learn, Pickle, NLTK  for ETL and ML pipelines.
-- Flask, Plotly for Flask web app.
+- Numpy, Pandas, Pyspark, findspark for ETL and ML pipelines.
+- Flask, Plotly, wtforms for Flask web app.
 
 <a name="installation"></a>
 ### Installation
 Clone the repositor below.
-`https://github.com/dalpengholic/Udacity_Disaster_response_project.git`
+https://github.com/dalpengholic/Udacity_Capstone_Prediction_Churn_with_Spark.git
 <a name="run"></a>
 ### Run
-1. Run the following commands in the project's root directory to set up your database and model.
 
-- To run ETL pipeline that cleans data and stores in database
-`python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
-- To run ML pipeline that trains classifier and saves
-`python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+1. Run the following commands in the project's root directory to set up your database and model.
+- Unzip 'mini_sparkify_event_data.json.zip'
+
+- To run ETL pipeline that cleans original log data and saves it as a parquet type
+`python model/create_df.py mini_sparkify_event_data.json model/sparkify.parquet`
+
+- To run ML pipeline that trains model and saves it
+`python models/build_model.py model/sparkify.parquet model/sparkify_model`
+
 
 2. Run the following command in the app's directory to run your web app.
 `python run.py`
@@ -55,19 +60,24 @@ Clone the repositor below.
 ├── app
 │   ├── run.py
 │   └── templates
-│       ├── go.html
-│       └── master.html
-├── data
-│   ├── disaster_categories.csv
-│   ├── disaster_messages.csv
-│   ├── DisasterResponse.db
-│   ├── process_data.py
-├── models
-│   ├── classifier.pkl
-│   └── train_classifier.py
+│       ├── base.html
+│       └── index.html
+│       └── prediction.html
+│       └── result.html
+├── model
+│   ├── create_df.py
+│   └── build_model.py
+│   ├── func_Build_model.py
+│   └── func_Create_spark.py
+│   ├── func_ETL.py
+│   └── func_Load.py
+│   ├── func_Save_model.py
 ├── notebooks
-│   ├── ETL Pipeline Preparation.ipynb
-│   ├── ML Pipeline Preparation.ipynb
+│   ├── Sparkify on IBM Watson.ipynb
+│   ├── Sparkify-organizing_applyScaler_makeModel.ipynb
+│   ├── Sparkify-organizing_feature_extraction.ipynb
+│   ├── Sparkify_Submission.ipynb
+│   ├── Sparkify_data_check.ipynb
 ├── LICENSE
 ├── README.md
 ```
@@ -75,7 +85,7 @@ Clone the repositor below.
 ## Results
 <a name="web_app"></a>
 ### Web App
-1. Main page of the web app. It contains the two plots, which are the summary of statistic of a training dataset. 
+1. Main page of the web app. It contains the six plots, which are the summary of statistic of a training dataset. 
 The first plot shows the distribution of message genre. The second plot shows frequency of categories
 ![main page](https://github.com/dalpengholic/Udacity_Disaster_response_project/blob/master/sample/main.png)
 
