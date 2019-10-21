@@ -21,15 +21,24 @@
 <a name="project_definition"></a>
 ## Project Definition
 ### Project Overview
-This is the capstone project of 2nd term of Data Science Nanodegree Program by Udacity. The goal of the project is to create a prediction model to find Sparkify users who are going to churn. Sparkify is a virtual music streaming service like Spotify. The major components of the project consists of three parts.
+This is the capstone project of 2nd term of Data Science Nanodegree Program by Udacity. The goal of the project is to create a prediction model by using Pyspark to find Sparkify users who are going to churn. Sparkify is a virtual music streaming service like Spotify. The major components of the project consists of the three parts as follows.
 
-1. ETL Pipeline : Original log file of Sparkify given by Udacity is loaded in a dataframe of Apache Spark dataframe and preprocessed(extraction, transformation, and loading) to make a refined dataframe for a machine learning pipeline.
+1. ETL Pipeline : Original log file of Sparkify given by Udacity is loaded in a dataframe of Apache Spark dataframe and preprocessed(extraction, transformation, and loading) to make a dataframe for a machine learning pipeline.
 2. ML pipeline : Prediction model is built and trained with the dataframe from ETL pipeline to predict potential churn users.
 3. Flask Web App : A web app contains the visual summary of a dataset used training a model and a prediction page that an user of this web can input a basic data of a Sparkify user and get a prediction result.
 
 ### Problem Statement
 
+
 ### Metrics
+The both of `F1 score` and `recall` are selected as the main metrics for this project. As the log dataset is imbalanced, which is the number of users to stay is four times larger than that of users to churn, it is not recommended to use accuracy as a metric. For example, a model only can predict '0'(not churn), it results in 80% of accuracy, but 0% of F1, Precision, and Recall. As I left comments about the metrics in conclusion, I thought that the main goal of this project is to predict Sparkify users who are going to churn so that Sparkify will execute some actions not to lose their customers. I assume that the total cost of promotion for potential churn users could be cheaper than that of cost of promotion to get new users. So, it is better to do promotion for a predicted group with low precision and high recall (consisting of most of the potential churn users and some users to stay) than for a predicted group with high precision but low recall (consisting of a very little potential churn users and users to stay)
+
+
+
+
+
+
+
 
 <a name="analysis"></a>
 ## Analysis
