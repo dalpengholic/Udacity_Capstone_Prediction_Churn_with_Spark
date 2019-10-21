@@ -11,7 +11,7 @@
     2. [Installation](#installation)
     3. [Run](#run)
 5. [File Structure](#file_structure)
-6. [Sample Result](#sample_result)
+6. [Sample Web Application](#sample_web_application)
 7. [License](#license)
 8. [Acknowledgements](#acknowledgements)
 
@@ -107,8 +107,8 @@ Clone the repositor below.
 ```
 
 
-<a name="sample_result"></a>
-## Sample Result
+<a name="sample_web_application"></a>
+## Sample Web Application
 Main page of the web app. 
 1. It contains the six plots, which are the summary of statistic of a training dataset. 
 2. Click `prediction` in the navbar if you want to predict a user having certain input data.
