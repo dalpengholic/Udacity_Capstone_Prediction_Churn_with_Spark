@@ -1,7 +1,9 @@
 # Udacity Data Scientist Nanodegree program
+
 ## Capstone Project_Prediction Model for Sparkify
 
 ## Table of Contents
+
 1. [About the Project](#about_the_project)
 2. [How to Use](#how_to_use)
     1. [Dependency](#dependency)
@@ -40,13 +42,13 @@ https://github.com/dalpengholic/Udacity_Capstone_Prediction_Churn_with_Spark.git
 ### Run
 
 1. Run the following commands in the project's root directory to set up your database and model.
-- Unzip 'mini_sparkify_event_data.json.zip'
+    1. Unzip 'mini_sparkify_event_data.json.zip'
 
-- To run ETL pipeline that cleans original log data and saves it as a parquet type
-`python model/create_df.py mini_sparkify_event_data.json model/sparkify.parquet`
+    2. To run ETL pipeline that cleans original log data and saves it as a parquet type
+    `python model/create_df.py mini_sparkify_event_data.json model/sparkify.parquet`
 
-- To run ML pipeline that trains model and saves it
-`python models/build_model.py model/sparkify.parquet model/sparkify_model`
+    3. To run ML pipeline that trains model and saves it
+    `python models/build_model.py model/sparkify.parquet model/sparkify_model`
 
 
 2. Run the following command in the app's directory to run your web app.
@@ -71,13 +73,15 @@ https://github.com/dalpengholic/Udacity_Capstone_Prediction_Churn_with_Spark.git
 │   └── func_Create_spark.py
 │   ├── func_ETL.py
 │   └── func_Load.py
-│   ├── func_Save_model.py
+│   └── func_Save_model.py
 ├── notebooks
 │   ├── Sparkify on IBM Watson.ipynb
 │   ├── Sparkify-organizing_applyScaler_makeModel.ipynb
 │   ├── Sparkify-organizing_feature_extraction.ipynb
 │   ├── Sparkify_Submission.ipynb
-│   ├── Sparkify_data_check.ipynb
+│   └── Sparkify_data_check.ipynb
+├── sample
+│   └── sample_webapp.gif
 ├── LICENSE
 ├── README.md
 ```
@@ -85,12 +89,9 @@ https://github.com/dalpengholic/Udacity_Capstone_Prediction_Churn_with_Spark.git
 ## Results
 <a name="web_app"></a>
 ### Web App
-1. Main page of the web app. It contains the six plots, which are the summary of statistic of a training dataset. 
-The first plot shows the distribution of message genre. The second plot shows frequency of categories
-![main page](https://github.com/dalpengholic/Udacity_Disaster_response_project/blob/master/sample/main.png)
+Main page of the web app. It contains the six plots, which are the summary of statistic of a training dataset.     
+![index page](https://github.com/dalpengholic/Udacity_Capstone_Prediction_Churn_with_Spark/blob/master/sample/sample_webapp.gif)
 
-2. Result of input new message on the web app. When a user input a new message about disaster, the trained model classifies where the message belongs to.
-![search page](https://github.com/dalpengholic/Udacity_Disaster_response_project/blob/master/sample/search.png)
 <a name="things_to_be_improved"></a>
 ### Things to be improved
 The model used in the web app was trained with an imbalanced dataset. For example, the training dataset did not have any messages beloning 'child alone' category. In addition, messages about categories like 'offer', 'fire', and 'hospitals' were also rare. One solution for this imbalanced case is to add new messages related to minority categories to reduce imbalance. The other workaround solution could be using other libraries such as 'imbalanced-learn' for advanced sampling methods like SMOTE (Synthetic Minority Over-Sampling Technique) and ADASYN (Adaptive Synthetic sampling approach). 
