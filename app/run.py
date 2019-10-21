@@ -90,7 +90,7 @@ def index():
             ],
 
             'layout': {
-                'title': 'Churn rate of gender',
+                'title': 'Churn Rate By Gender',
                 'yaxis': {
                     'title': "Rate"
                 },
@@ -117,7 +117,7 @@ def index():
             ],
             
             'layout': {
-                'title': 'Churn rate of Operating System',
+                'title': 'Churn Rate By Operating System',
                 'yaxis': {
                     'title' : 'Rate'
                 },
@@ -140,7 +140,7 @@ def index():
             ],
             
             'layout': {
-                'title': 'Churn rate of last level',
+                'title': 'Churn Rate By Last Level',
                 'yaxis': {
                     'title' : 'Rate'
                 },
@@ -163,7 +163,7 @@ def index():
             ],
             
             'layout': {
-                'title': 'Box plot of Active days after id creation',
+                'title': 'Active Days After Id Creation',
                 'yaxis': {
                     'title' : 'Number of Days'
                 },
@@ -189,7 +189,7 @@ def index():
             ],
             
             'layout': {
-                'title': 'Box plot of Alltime Top100_artist listening',
+                'title': 'Number of Listening: All-time Top100 Artists',
                 'yaxis': {
                     'title' : 'Number of listening per day'
                 },
@@ -212,7 +212,7 @@ def index():
             ],
             
             'layout': {
-                'title': 'Box plot of Thisweek Top100_song Listening',
+                'title': 'Number of Listening: This Week Top100 songs',
                 'yaxis': {
                     'title' : 'Number of listening per day'
                 },
