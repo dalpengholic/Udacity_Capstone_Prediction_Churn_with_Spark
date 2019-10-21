@@ -4,7 +4,7 @@
 
 ## Table of Contents
 1. [Project Definition](#project_definition)
-2. [Anlysis](#analysis)
+2. [Analysis](#analysis)
 3. [Conclusion](#conclusion)
 4. [How to use](#how_to_use)    
     1. [Dependency](#dependency)
