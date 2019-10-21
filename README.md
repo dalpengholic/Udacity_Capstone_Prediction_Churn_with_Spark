@@ -1,29 +1,48 @@
 # Udacity Data Scientist Nanodegree program
 
-## Capstone Project_Prediction Model for Sparkify
+## Capstone Project: Prediction Model for Sparkify
 
 ## Table of Contents
-
-1. [About the Project](#about_the_project)
-2. [How to Use](#how_to_use)
+1. [Project Definition](#project_definition)
+    1. [Project Overview](#project_overview)
+    2. [Problem Statement](#problem_statement)
+    3. [Metrics](#metrics)
+2. [Anlysis](#analysis)
+    1. [Data Exploration](#data_exploration)
+    2. [Data Visualization](#data_visualization)
+3. [Conclusion](#conclusion)
+    1. [Reflection](#reflection)
+    2. [Improvement](#improvement)
+4. [How to use](#how_to_use)    
     1. [Dependency](#dependency)
     2. [Installation](#installation)
     3. [Run](#run)
-3. [File Structure](#file_structure)
-4. [Results](#results)
-    1. [Web app](#web_app)
-    2. [Things to be improved](#things_to_be_improved)
-5. [License](#license)
-6. [Acknowledgements](#acknowledgements)
+5. [File Structure](#file_structure)
+6. [Sample Result](#sample_result)
+7. [License](#license)
+8. [Acknowledgements](#acknowledgements)
 
-<a name="about_the_project"></a>
 
-## About the Project
+
+
+<a name="project_definition"></a>
+## Project Definition
+
+<a name="project_overview"></a>
+## Project Overview
 This is the capstone project of 2nd term of Data Science Nanodegree Program by Udacity. The goal of the project is to create a prediction model to find Sparkify users who are going to churn. Sparkify is a virtual music streaming service like Spotify. The major components of the project consists of three parts.
 
 1. ETL Pipeline : Original log file of Sparkify given by Udacity is loaded in a dataframe of Apache Spark dataframe and preprocessed(extraction, transformation, and loading) to make a refined dataframe for a machine learning pipeline.
 2. ML pipeline : Prediction model is built and trained with the dataframe from ETL pipeline to predict potential churn users.
 3. Flask Web App : A web app contains the visual summary of a dataset used training a model and a prediction page that an user of this web can input a basic data of a Sparkify user and get a prediction result.
+
+
+<a name="problem_statement"></a>
+## Problem Statement
+<a name="metrics"></a>
+## Metrics
+
+
 
 <a name="how_to_use"></a>
 ## How to Use
@@ -87,21 +106,15 @@ Clone the repositor below.
 ├── README.md
 ```
 
-<a name="results"></a>
-## Results
 
-<a name="web_app"></a>
-### Web App
+<a name="sample_result"></a>
+## Sample Result
 Main page of the web app. 
 1. It contains the six plots, which are the summary of statistic of a training dataset. 
 2. Click `prediction` in the navbar if you want to predict a user having certain input data.
 3. Input data and click the submit button below.
 
 ![index page](https://github.com/dalpengholic/Udacity_Capstone_Prediction_Churn_with_Spark/blob/master/sample/sample_webapp.gif)
-
-<a name="things_to_be_improved"></a>
-### Things to be improved
-The model used in the web app was trained with an imbalanced dataset. For example, the training dataset did not have any messages beloning 'child alone' category. In addition, messages about categories like 'offer', 'fire', and 'hospitals' were also rare. One solution for this imbalanced case is to add new messages related to minority categories to reduce imbalance. The other workaround solution could be using other libraries such as 'imbalanced-learn' for advanced sampling methods like SMOTE (Synthetic Minority Over-Sampling Technique) and ADASYN (Adaptive Synthetic sampling approach). 
 
 <a name="license"></a>
 ## License
