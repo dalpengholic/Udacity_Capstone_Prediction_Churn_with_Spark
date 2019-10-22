@@ -76,7 +76,12 @@ According to [the article](https://hackernoon.com/defining-churn-the-right-way-5
 
 ### Improvement
 1. Model
-- user similarity matrix,segmentation
+- User similarity matrix for segmenation
+I wished to make a user similarity matrix using a Pyspark dataframe to create a group feature to use in clustering. I planned to use the result of clustering for the prediction model to make it better. I made a matrix, but it was impractical because it needed a lot of time to execute. So, I had to give up the pland. 
+
+- Threshold
+At the time I played with Sparkify data, only few models in Spark allowed to set a threshold to predict.
+
 - threshold, pipeline
 - interval, critical event, promotion fee for current users and new users
 - Sample number
