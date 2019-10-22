@@ -65,6 +65,15 @@ It is possible to see the both data exploration and visualization in the main no
 
 <a name="Conclusion"></a>
 ## Conclusion
+### Results of F1 score and recall
+At local machine
+- F1 score (test/validation set): 0.81 / 0.91
+- Recall (test/validiation set: 0.78 / 0.5
+
+At IBM Watson flatform
+- F1 score (test/validation set): 0.86 / 0.82
+- Recall (test/validiation set: 0.56 / 0.46
+
 ### Reflection
 1. Difference of dataframe Pandas vs Spark
 
@@ -72,22 +81,16 @@ It was hard for me to get the concept of lazy execution of Spark even though I f
 
 2. Importance of metric
 
-According to [the article](https://hackernoon.com/defining-churn-the-right-way-5396722ddb), critical events is defined that main actions executed on a certain platform by customers. Customers solve their own problems by doing a series of critical events.1 Therefore, it is critical to analyze what customers mostly do on a platform and to understand the result of critical events could bring the satisfaction of the customers or the increase of the happiness of the customers. They will stay when they are happy, otherwise they will go away. To know the pros and cons of the main service on a certain platform, it is recommended to analyze the user group who has stayed in more than others. After the analysis, a service provider could know which parts of a service give satisfaction to customer or not and enhance their service quality. In addition, well-analyzed information about the loyal group shows which groups must be target groups in the future marketing for acquisition of new users. 
+According to [the article](https://hackernoon.com/defining-churn-the-right-way-5396722ddb), critical events is defined that main actions executed on a certain platform by customers. Customers solve their own problems by doing a series of critical events. Therefore, it is critical to analyze what customers mostly do on a platform and to understand the result of critical events could bring the satisfaction of the customers or the increase of the happiness of the customers. They will stay when they are happy, otherwise they will go away. To know the pros and cons of the main service on a certain platform, it is recommended to analyze the user group who has stayed in more than others. After the analysis, a service provider could know which parts of a service give satisfaction to customer or not and enhance their service quality. In addition, well-analyzed information about the loyal group shows which groups must be target groups in the future marketing for acquisition of new users. 
 
 ### Improvement
 1. Model
 - User similarity matrix for segmenation
 I wished to make a user similarity matrix using a Pyspark dataframe to create a group feature to use in clustering. I planned to use the result of clustering for the prediction model to make it better. I made a matrix, but it was impractical because it needed a lot of time to execute. So, I had to give up the pland. 
 
-- Threshold
-At the time I played with Sparkify data, only few models in Spark allowed to set a threshold to predict.
+2. GridSearch
+The hyperparameters of GBTclassifier were not optimized.
 
-- threshold, pipeline
-- interval, critical event, promotion fee for current users and new users
-- Sample number
-2. Web App
-- threshold adjustment
-- data plots
 
 <a name="how_to_use"></a>
 ## How to Use
