@@ -38,24 +38,24 @@ The both of `F1 score` and `recall` are selected as the main metrics for this pr
 ### Data Exploration and Data Visualization
 It is possible to see the both data exploration and visualization in the main notebook `Sparkify_Submission.ipynb` and the web-app main page
 ### Input Data
-artist: Name of artist of the song played, ex)Adam Lambert
-auth: Status of user such as Logged in or Logged out ex) Logged in
-firstName: First name of user, ex) Colin
-gender: Gender of user, ex) M
-itemInSession: Number of item in a session, ex)80
-lastName: Last name of user, ex) Freeman
-length: Length of song, ex) 277.89016
-level: Subscription status of user,  ex) paid
-location: Geographical information where user connect, ex) Bakersfield, CA
-method: REST API, ex) PUT
-page: Page that user at the event ex) NextSong
-registration: Unique number like userId, ex) 1.538173e+12
-sessionId: Number of session id, ex) 8
-song: Name of song, ex) Rockpools
-status: HTTP response status codes, ex) 200
-ts: Timestamp of event, ex) 1538352117000
-userAgent: Agent information of user, ex) Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) G..
-userId: UserId number, ex) 30
+- artist: Name of artist of the song played, ex)Adam Lambert
+- auth: Status of user such as Logged in or Logged out ex) Logged in
+- firstName: First name of user, ex) Colin
+- gender: Gender of user, ex) M
+- itemInSession: Number of item in a session, ex)80
+- lastName: Last name of user, ex) Freeman
+- length: Length of song, ex) 277.89016
+- level: Subscription status of user,  ex) paid
+- location: Geographical information where user connect, ex) Bakersfield, CA
+- method: REST API, ex) PUT
+- page: Page that user at the event ex) NextSong
+- registration: Unique number like userId, ex) 1.538173e+12
+- sessionId: Number of session id, ex) 8
+- song: Name of song, ex) Rockpools
+- status: HTTP response status codes, ex) 200
+- ts: Timestamp of event, ex) 1538352117000
+- userAgent: Agent information of user, ex) Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) G..
+- userId: UserId number, ex) 30
 
 
 <a name="Conclusion"></a>
