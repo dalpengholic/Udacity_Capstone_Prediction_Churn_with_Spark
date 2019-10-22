@@ -67,9 +67,11 @@ It is possible to see the both data exploration and visualization in the main no
 ## Conclusion
 ### Reflection
 1. Difference of dataframe Pandas vs Spark
-It was hard for me to get the concept of lazy execution of Spark eventhough I finished all extracurriculum of Spark given by Udacity. I can describe the difference analogously that except the actions like `collect()`,`show()`, any methods used for manipulation of dataframe in Spark are just drawing a blue print that will be excuted when an action is triggered. So, I wasted my times to see a result when I triggered any action to check what I did correctly or not.
+
+It was hard for me to get the concept of lazy execution of Spark even though I finished all extracurriculum of Spark given by Udacity. I can describe the difference analogously that except the actions like `collect()`,`show()`, any methods used for manipulation of dataframe in Spark are just drawing a blue print that will be excuted when an action is triggered. So, I wasted my times to see a result when I triggered any action to check what I did correctly or not.
 
 2. Importance of metric
+
 According to [the article](https://hackernoon.com/defining-churn-the-right-way-5396722ddb), critical events is defined that main actions executed on a certain platform by customers. Customers solve their own problems by doing a series of critical events.1 Therefore, it is critical to analyze what customers mostly do on a platform and to understand the result of critical events could bring the satisfaction of the customers or the increase of the happiness of the customers. They will stay when they are happy, otherwise they will go away. To know the pros and cons of the main service on a certain platform, it is recommended to analyze the user group who has stayed in more than others. After the analysis, a service provider could know which parts of a service give satisfaction to customer or not and enhance their service quality. In addition, well-analyzed information about the loyal group shows which groups must be target groups in the future marketing for acquisition of new users. 
 
 ### Improvement
