@@ -26,10 +26,15 @@ This is the capstone project of 2nd term of Data Science Nanodegree Program by U
 3. Flask Web App : A web app contains the visual summary of a dataset used training a model and a prediction page that an user of this web can input a basic data of a Sparkify user and get a prediction result.
 
 ### Problem Statement
-Metrics are important because all types of business make decision based on their metriccs. If metrics were set incorrectly, decisions from the metrics go wrong
+Having the right metrics is critical for companies in any industries because it directly shows the signal of the health of its business. Churn rate is one of the metrics used a lot for companies having SaaS(software as a service) model. So, for Sparkify, a music streaming service like Spotify, it is natural to consider its churn rate as a main metric. As [the article](https://hackernoon.com/defining-churn-the-right-way-5396722ddb96) mentioned, the metrics like acquisition and conversion are more important for a company selling furniture because buying furniture is not a repetitive action within a short time frame.
 
+[The same article](https://hackernoon.com/defining-churn-the-right-way-5396722ddb96) commented on the general definition of churn rate that no critical event made by a user in a certain time frame. The formula of churn rate is given that the users remained at the end of a certain time frame divided by the users at the beginning of a certain time frame. The definition of churn rate of this Sparkify project can be calculated that the number of users who submitted churn decision to Sparkify service divided by total users in the given sample dataset by Udacity.
 
-### Metrics
+As mentioned in [this article](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers), churn rate could be used not only to anticipate future profit, but also to provide opportunities to do marketing for the users who have the potential to churn, to enhance the main service of the Sparkify platform, and to do right promotion to the meaningful groups of people who will stay in Sparkify more than other groups.
+
+In sum, it is beneficial for Sparkify to have a model that predicts which users prefer to churn.
+
+### Metrics to select a suitable model
 The both of `F1 score` and `recall` are selected as the main metrics for this project. As the log dataset is imbalanced, which is the number of users to stay is about four times larger than that of users to churn, it is not recommended to use accuracy as a metric. For example, a model only can predict '0'(not churn), it results in 80% of accuracy, but 0% of F1, Precision, and Recall. As I left comments about the metrics in conclusion, I thought that the main goal of this project is to predict Sparkify users who are going to churn so that Sparkify will execute some actions not to lose their customers. It is fact that the total cost of promotion for potential churn users could be cheaper than that of cost of promotion to get new users. So, it is better to do promotion for a predicted group by low precision and high recall model (consisting of most of the potential churn users and some users to stay) than for a predicted group by the opposite model, which has high precision but low recall.
 
 
@@ -62,7 +67,11 @@ It is possible to see the both data exploration and visualization in the main no
 ## Conclusion
 ### Reflection
 1. Difference of dataframe Pandas vs Spark
-2. Metric, threshold
+It was hard for me to get the concept of lazy execution of Spark eventhough I finished all extracurriculum of Spark given by Udacity. I can describe the difference analogously that except the actions like `collect()`,`show()`, any methods used for manipulation of dataframe in Spark are just drawing a blue print that will be excuted when an action is triggered. So, I wasted my times to see a result when I triggered any action to check what I did correctly or not.
+
+2. Importance of metric
+According to [the article](https://hackernoon.com/defining-churn-the-right-way-5396722ddb), critical events is defined that main actions executed on a certain platform by customers. Customers solve their own problems by doing a series of critical events.1 Therefore, it is critical to analyze what customers mostly do on a platform and to understand the result of critical events could bring the satisfaction of the customers or the increase of the happiness of the customers. They will stay when they are happy, otherwise they will go away. To know the pros and cons of the main service on a certain platform, it is recommended to analyze the user group who has stayed in more than others. After the analysis, a service provider could know which parts of a service give satisfaction to customer or not and enhance their service quality. In addition, well-analyzed information about the loyal group shows which groups must be target groups in the future marketing for acquisition of new users. 
+
 ### Improvement
 1. Model
 - user similarity matrix,segmentation
