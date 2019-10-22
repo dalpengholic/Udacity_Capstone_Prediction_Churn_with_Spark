@@ -191,7 +191,7 @@ def index():
             'layout': {
                 'title': 'Number of Listening: All-time Top100 Artists',
                 'yaxis': {
-                    'title' : 'Number of listening per day'
+                    'title' : 'Number of Listening per Day'
                 },
                 'xaxis': {
                     'title' : 'Churn',
@@ -214,7 +214,7 @@ def index():
             'layout': {
                 'title': 'Number of Listening: This Week Top100 songs',
                 'yaxis': {
-                    'title' : 'Number of listening per day'
+                    'title' : 'Number of Listening per Day'
                 },
                 'xaxis': {
                     'title' : 'Churn',
