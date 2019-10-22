@@ -170,4 +170,4 @@ This source code is made available under the [MIT License](https://github.com/da
 
 <a name="acknowledgements"></a>
 ## Acknowledgements
-This project is given by [Udacity](https://www.udacity.com) 
+This project is given by [Udacity](https://www.udacity.com). 
