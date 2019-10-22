@@ -30,14 +30,33 @@ Metrics are important because all types of business make decision based on their
 
 
 ### Metrics
-The both of `F1 score` and `recall` are selected as the main metrics for this project. As the log dataset is imbalanced, which is the number of users to stay is four times larger than that of users to churn, it is not recommended to use accuracy as a metric. For example, a model only can predict '0'(not churn), it results in 80% of accuracy, but 0% of F1, Precision, and Recall. As I left comments about the metrics in conclusion, I thought that the main goal of this project is to predict Sparkify users who are going to churn so that Sparkify will execute some actions not to lose their customers. I assume that the total cost of promotion for potential churn users could be cheaper than that of cost of promotion to get new users. So, it is better to do promotion for a predicted group with low precision and high recall (consisting of most of the potential churn users and some users to stay) than for a predicted group with high precision but low recall (consisting of a very little potential churn users and users to stay)
+The both of `F1 score` and `recall` are selected as the main metrics for this project. As the log dataset is imbalanced, which is the number of users to stay is about four times larger than that of users to churn, it is not recommended to use accuracy as a metric. For example, a model only can predict '0'(not churn), it results in 80% of accuracy, but 0% of F1, Precision, and Recall. As I left comments about the metrics in conclusion, I thought that the main goal of this project is to predict Sparkify users who are going to churn so that Sparkify will execute some actions not to lose their customers. It is fact that the total cost of promotion for potential churn users could be cheaper than that of cost of promotion to get new users. So, it is better to do promotion for a predicted group by low precision and high recall model (consisting of most of the potential churn users and some users to stay) than for a predicted group by the opposite model, which has high precision but low recall.
 
 
 <a name="analysis"></a>
 ## Analysis
-### Data Exploration
-#### Input Data
-### Data Visualization
+### Data Exploration and Data Visualization
+It is possible to see the both data exploration and visualization in the main notebook `Sparkify_Submission.ipynb` and the web-app main page
+### Input Data
+artist: Name of artist of the song played, ex)Adam Lambert
+auth: Status of user such as Logged in or Logged out ex) Logged in
+firstName: First name of user, ex) Colin
+gender: Gender of user, ex) M
+itemInSession: Number of item in a session, ex)80
+lastName: Last name of user, ex) Freeman
+length: Length of song, ex) 277.89016
+level: Subscription status of user,  ex) paid
+location: Geographical information where user connect, ex) Bakersfield, CA
+method: REST API, ex) PUT
+page: Page that user at the event ex) NextSong
+registration: Unique number like userId, ex) 1.538173e+12
+sessionId: Number of session id, ex) 8
+song: Name of song, ex) Rockpools
+status: HTTP response status codes, ex) 200
+ts: Timestamp of event, ex) 1538352117000
+userAgent: Agent information of user, ex) Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) G..
+userId: UserId number, ex) 30
+
 
 <a name="Conclusion"></a>
 ## Conclusion
