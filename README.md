@@ -62,6 +62,24 @@ It is possible to see the both data exploration and visualization in the main no
 - userAgent: Agent information of user, ex) Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) G..
 - userId: UserId number, ex) 30
 
+## Methodology
+### Steps of Preprocessing
+The preprocessing (ETL) to create a dataframe for ML pipeline as follows:
+1. Remove rows that `userId` column has only whitespace
+2. Make list of customer ids who churned
+3. Create `os-system` column from userAgent column
+4. Extract first two letters to make as a `location_first` column from location column
+5. Create `total number of session ID` column
+6. Create `total number of itemInSession` column
+7. Create `last_access_time`,`first_access_tim`e columns
+8. Create `Active time after id creation` column
+9. Convert `timestamp` column to `number of week, month, year` columns
+10. Create `number of listening of all-time top 100 artists` column
+11. Create `number of listening of This week top 100 songs` column
+12. Create dataframes to make columns of numbers of `thumbsup`, `thumbsdown`, `advert`, `addfriend`, `addplaylist`, `sub_upgrade`, `sub_downgrade`, `error`, `logout`, `last_level`, `spent_time` by joining
+
+### Complication during the project
+I wanted to make a user similarity matrix to create a new feature by clustering. It was pretty fast and straightforward to make the matrix using Pandas and to do clustering using scikit-learn. However, it was too slow to make the matrix using PySpark. I tried the processes on my virtual environment given by Udacity and my local machine. I wondered this processes could have been completed faster if I had done it on AWS or IBM cluster environment.
 
 <a name="Conclusion"></a>
 ## Conclusion
