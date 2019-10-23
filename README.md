@@ -5,15 +5,16 @@
 ## Table of Contents
 1. [Project Definition](#project_definition)
 2. [Analysis](#analysis)
-3. [Conclusion](#conclusion)
-4. [How to use](#how_to_use)    
+3. [Methodology](#methodology)
+4. [Conclusion](#conclusion)
+5. [How to use](#how_to_use)    
     1. [Dependency](#dependency)
     2. [Installation](#installation)
     3. [Run](#run)
-5. [File Structure](#file_structure)
-6. [Sample Web Application](#sample_web_application)
-7. [License](#license)
-8. [Acknowledgements](#acknowledgements)
+6. [File Structure](#file_structure)
+7. [Sample Web Application](#sample_web_application)
+8. [License](#license)
+9. [Acknowledgements](#acknowledgements)
 
 
 <a name="project_definition"></a>
@@ -62,6 +63,7 @@ It is possible to see the both data exploration and visualization in the main no
 - userAgent: Agent information of user, ex) Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) G..
 - userId: UserId number, ex) 30
 
+<a name="methodology"></a>
 ## Methodology
 ### Steps of Preprocessing
 The preprocessing (ETL) to create a dataframe for ML pipeline as follows:
@@ -82,18 +84,29 @@ The preprocessing (ETL) to create a dataframe for ML pipeline as follows:
 I wanted to make a user similarity matrix to create a new feature by clustering. It was pretty fast and straightforward to make the matrix using Pandas and to do clustering using scikit-learn. However, it was too slow to make the matrix using PySpark. I tried the processes on my virtual environment given by Udacity and my local machine. I wondered this processes could have been completed faster if I had done it on AWS or IBM cluster environment.
 
 ### Refinements
-In order to get a better prediction model, features are going to be scaled by MinMaxScaler. After that, GridSearchCV is going to be excuted to find better hyper parameters of the model. To evaluate the robustness of my model, CrossValidator is goint to be used.
+In order to get a better prediction model, following were executed
+- Feature Scaling : MinMaxScaler
+- Hyper parameters tuning : GridSearchCV
+- Evaluation model : CrossValidator
+
 
 <a name="Conclusion"></a>
 ## Conclusion
 ### Results of F1 Score and Recall
-At local machine
+At local machine 
+(before refinements)
 - F1 score (test/validation set): 0.81 / 0.91
 - Recall (test/validiation set: 0.78 / 0.5
+
+(after refinements)
+- F1 score (test/validation set): 0.92 / 0.84
+- Recall (test/validiation set: 0.88 / 0.4
 
 At IBM Watson flatform
 - F1 score (test/validation set): 0.86 / 0.82
 - Recall (test/validiation set: 0.56 / 0.46
+
+After the model refinements, the F1 score of the model decreased to 0.94 from 1, which avoided overfitting. 
 
 ### Intersting Part
 It was amazing for me to learn how the log data of customers was structured and how real companies do ETL to extract meaningful information from it. The project also gave me motivation to learn a new language like Scala which is the langauge to make Spark. Though Apache spark provides three APIs JAVA, Python, Scala, I read an [article](https://mindfulmachines.io/blog/2018/6/apache-spark-scala-vs-java-v-python-vs-r-vs-sql26) that the performance of Scala was better in some cases.
