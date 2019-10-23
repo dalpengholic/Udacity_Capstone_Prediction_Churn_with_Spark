@@ -37,7 +37,7 @@ def build_model(df_ML):
     assembler = VectorAssembler(inputCols=input_features, outputCol="assmebled_features")
     scaler = MinMaxScaler(inputCol="assmebled_features" , outputCol="features")
     # Initiate GBTClassifier
-    gbt = GBTClassifier(featuresCol="features",labelCol="churn", maxIter=5)
+    gbt = GBTClassifier(featuresCol="features",labelCol="churn", maxIter=5, maxBins=28, maxDepth=4)
     # Create pipeline
     pipeline = Pipeline(stages=[indexers[0], indexers[1], indexers[2], encoder, assembler, scaler, gbt])
 
@@ -71,9 +71,9 @@ def build_model(df_ML):
     print("Recall(churn case) of test set: ", metrics_test.recall(1))
     print(metrics_test.confusionMatrix().toArray())
     print()
-    print("F1 score of validation set: ", metrics_test.fMeasure())
-    print("Precision(churn case) of validation set: ", metrics_test.precision(1))
-    print("Recall(churn case) of validation set: ", metrics_test.recall(1))
+    print("F1 score of validation set: ", metrics_validation.fMeasure())
+    print("Precision(churn case) of validation set: ", metrics_validation.precision(1))
+    print("Recall(churn case) of validation set: ", metrics_validation.recall(1))
     print(metrics_validation.confusionMatrix().toArray())
     
     return model_gbt
