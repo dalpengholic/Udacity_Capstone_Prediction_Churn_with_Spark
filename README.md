@@ -81,6 +81,9 @@ The preprocessing (ETL) to create a dataframe for ML pipeline as follows:
 ### Complication during the project
 I wanted to make a user similarity matrix to create a new feature by clustering. It was pretty fast and straightforward to make the matrix using Pandas and to do clustering using scikit-learn. However, it was too slow to make the matrix using PySpark. I tried the processes on my virtual environment given by Udacity and my local machine. I wondered this processes could have been completed faster if I had done it on AWS or IBM cluster environment.
 
+### Refinements
+In order to get a better prediction model, features are going to be scaled by MinMaxScaler. After that, GridSearchCV is going to be excuted to find better hyper parameters of the model. To evaluate the robustness of my model, CrossValidator is goint to be used.
+
 <a name="Conclusion"></a>
 ## Conclusion
 ### Results of F1 Score and Recall
