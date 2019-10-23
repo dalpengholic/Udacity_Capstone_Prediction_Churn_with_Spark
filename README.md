@@ -34,7 +34,7 @@ As mentioned in [this article](https://hbr.org/2014/10/the-value-of-keeping-the-
 
 In sum, it is beneficial for Sparkify to have a model that predicts which users prefer to churn.
 
-### Metrics to select a suitable model
+### Metrics for Model
 The both of `F1 score` and `recall` are selected as the main metrics for this project. As the log dataset is imbalanced, which is the number of users to stay is about four times larger than that of users to churn, it is not recommended to use accuracy as a metric. For example, a model only can predict '0'(not churn), it results in 80% of accuracy, but 0% of F1, Precision, and Recall. As I left comments about the metrics in conclusion, I thought that the main goal of this project is to predict Sparkify users who are going to churn so that Sparkify will execute some actions not to lose their customers. It is fact that the total cost of promotion for potential churn users could be cheaper than that of cost of promotion to get new users. So, it is better to do promotion for a predicted group by low precision and high recall model (consisting of most of the potential churn users and some users to stay) than for a predicted group by the opposite model, which has high precision but low recall.
 
 
@@ -65,7 +65,7 @@ It is possible to see the both data exploration and visualization in the main no
 
 <a name="Conclusion"></a>
 ## Conclusion
-### Results of F1 score and recall
+### Results of F1 Score and Recall
 At local machine
 - F1 score (test/validation set): 0.81 / 0.91
 - Recall (test/validiation set: 0.78 / 0.5
@@ -74,19 +74,28 @@ At IBM Watson flatform
 - F1 score (test/validation set): 0.86 / 0.82
 - Recall (test/validiation set: 0.56 / 0.46
 
-### Reflection
+### Intersting Part
+It was amazing for me to learn how the log data of customers was structured and how real companies do ETL to extract meaningful information from it. The project also gave me motivation to learn a new language like Scala which is the langauge to make Spark. Though Apache spark provides three APIs JAVA, Python, Scala, I read an [article](https://mindfulmachines.io/blog/2018/6/apache-spark-scala-vs-java-v-python-vs-r-vs-sql26) that the performance of Scala was better in some cases.
+
+### Difficult Parts
 1. Difference of dataframe Pandas vs Spark
+- Reason: Two different concepts of two dataframe from Pandas and Spark. It was hard for me to get the concept of lazy execution of Spark even though I finished all extracurriculum of Spark given by Udacity. Now, I can describe the difference analogously. Any methods used for manipulation of dataframe in Spark except actions like the actions like `collect()`,`show()` are the same as just drawing a blue print what Spark will execute when any action is triggered. It was ok when I wrote some lines of code in a cell and executed it. However, when I had to start a jupyter notebook kernel multiple times, it was too slow to execute all cells because I had not commented any actions in the cells. I should have commented all actions
+- Solution : I commented all actions in the cells above the current cell that I was.
 
-It was hard for me to get the concept of lazy execution of Spark even though I finished all extracurriculum of Spark given by Udacity. I can describe the difference analogously that except the actions like `collect()`,`show()`, any methods used for manipulation of dataframe in Spark are just drawing a blue print that will be excuted when an action is triggered. So, I wasted my times to see a result when I triggered any action to check what I did correctly or not.
+2. Make a Flask web-app
+- Reason: 
+Even though, I referred to the Flask wep-app that I made before, it was hard to make it because I had a very few limitied knowledge about front-end and back-end. Simply, I had no idea of how Bootstrap and Flask work when I finished making a prediction model.
+- Solution: I took small online courses for learning the basic of Bootstrap and Flask to make my web-app.
 
-2. Importance of metric
+### Reflection
+#### Importance of metric
 
 According to [the article](https://hackernoon.com/defining-churn-the-right-way-5396722ddb), critical events is defined that main actions executed on a certain platform by customers. Customers solve their own problems by doing a series of critical events. Therefore, it is critical to analyze what customers mostly do on a platform and to understand the result of critical events could bring the satisfaction of the customers or the increase of the happiness of the customers. They will stay when they are happy, otherwise they will go away. To know the pros and cons of the main service on a certain platform, it is recommended to analyze the user group who has stayed in more than others. After the analysis, a service provider could know which parts of a service give satisfaction to customer or not and enhance their service quality. In addition, well-analyzed information about the loyal group shows which groups must be target groups in the future marketing for acquisition of new users. 
 
 ### Improvement
 1. Model
 - User similarity matrix for segmenation
-I wished to make a user similarity matrix using a Pyspark dataframe to create a group feature to use in clustering. I planned to use the result of clustering for the prediction model to make it better. I made a matrix, but it was impractical because it needed a lot of time to execute. So, I had to give up the pland. 
+I wished to make a user similarity matrix using a Pyspark dataframe to create a group feature to use in clustering. I planned to use the result of clustering for the prediction model to make it better. I made a matrix, but it was impractical because it needed a lot of time to execute. So, I had to give up the plan. 
 
 2. GridSearch
 The hyperparameters of GBTclassifier were not optimized.
