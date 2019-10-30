@@ -102,7 +102,7 @@ At local machine
 - F1 score (test/validation set): 0.92 / 0.84
 - Recall (test/validiation set: 0.88 / 0.4
 
-At IBM Watson flatform
+At IBM Watson Platform
 - F1 score (test/validation set): 0.86 / 0.82
 - Recall (test/validiation set: 0.56 / 0.46
 
