@@ -96,15 +96,15 @@ In order to get a better prediction model, following were executed
 At local machine 
 (before refinements)
 - F1 score (test/validation set): 0.81 / 0.91
-- Recall (test/validiation set: 0.78 / 0.5
+- Recall (test/validiation set): 0.78 / 0.5
 
 (after refinements)
 - F1 score (test/validation set): 0.92 / 0.84
-- Recall (test/validiation set: 0.88 / 0.4
+- Recall (test/validiation set): 0.88 / 0.4
 
 At IBM Watson Platform
 - F1 score (test/validation set): 0.86 / 0.82
-- Recall (test/validiation set: 0.56 / 0.46
+- Recall (test/validiation set): 0.56 / 0.46
 
 After the model refinements, the F1 score of the model decreased to 0.94 from 1, which avoided overfitting. 
 
